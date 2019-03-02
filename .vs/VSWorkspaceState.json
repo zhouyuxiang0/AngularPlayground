@@ -1,8 +1,12 @@
 {
   "ExpandedNodes": [
     "",
-    "\\auction"
+    "\\auction",
+    "\\auction\\src",
+    "\\auction\\src\\app",
+    "\\auction\\src\\app\\guard",
+    "\\auction\\src\\app\\product"
   ],
-  "SelectedNode": "\\auction",
+  "SelectedNode": "\\auction\\src\\app\\guard\\login.guard.ts",
   "PreviewInSolutionExplorer": false
 }

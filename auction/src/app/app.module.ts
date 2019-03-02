@@ -11,6 +11,7 @@ import { ProductComponent } from './product/product.component';
 import { StarsComponent } from './stars/stars.component';
 import { HomeComponent } from './home/home.component';
 import { Code404Component } from './code404/code404.component';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { Code404Component } from './code404/code404.component';
     ProductComponent,
     StarsComponent,
     HomeComponent,
-    Code404Component
+    Code404Component,
+    ProductDetailComponent
   ],
   imports: [
     BrowserModule,
