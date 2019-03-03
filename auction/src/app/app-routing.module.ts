@@ -13,7 +13,7 @@ const routes: Routes = [
     path: '', 
     component: HomeComponent 
   },{
-    path: 'product/:prodTitle', 
+    path: 'product/:productId', 
     component: ProductDetailComponent
     // resolve: {product: ProductResolve}
     // canActivate: [LoginGuard], 
