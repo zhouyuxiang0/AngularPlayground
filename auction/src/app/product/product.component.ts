@@ -1,6 +1,9 @@
-import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
-import { ProductService, Product } from '../shared/product.service';
+import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { Product, ProductService } from '../shared/product.service';
+import 'rxjs/add/operator/debounceTime';
+import debounceTime from 'r';
 
 @Component({
   selector: 'app-product',
@@ -10,11 +13,19 @@ import { ProductService, Product } from '../shared/product.service';
 export class ProductComponent implements OnInit {
 
   private products: Product[];
-  private productId: number;
+  private keyword: string;
+  private titleFilter:FormControl = new FormControl();
+  // private productId: number;
 
   constructor(
     private productService: ProductService
-  ) { }
+  ) {
+    this.titleFilter.valueChanges
+      .pipe(debounceTime(500))
+      .subscribe(
+        value => this.keyword = value
+      );
+  }
 
   ngOnInit() {
     this.products = this.productService.getProducts();
