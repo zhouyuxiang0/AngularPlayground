@@ -10,7 +10,7 @@ import { NgModule } from '@angular/core';
 import { ProductComponent } from './product/product.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { ProductService } from './shared/product.service';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { SearchComponent } from './search/search.component';
 import { StarsComponent } from './stars/stars.component';
 import { FilterPipe } from './pipe/filter.pipe';
@@ -33,7 +33,8 @@ import { FilterPipe } from './pipe/filter.pipe';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [ProductService],
   bootstrap: [AppComponent]

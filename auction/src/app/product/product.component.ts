@@ -1,9 +1,8 @@
 import { ActivatedRoute, Params } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { Product, ProductService } from '../shared/product.service';
-import 'rxjs/Rx';
-
+import { debounceTime } from 'rxjs/operators';
 
 @Component({
   selector: 'app-product',
@@ -21,7 +20,7 @@ export class ProductComponent implements OnInit {
     private productService: ProductService
   ) {
     this.titleFilter.valueChanges
-      .debounceTime(500)
+      .pipe(debounceTime(500))
       .subscribe(
         value => this.keyword = value
       );
